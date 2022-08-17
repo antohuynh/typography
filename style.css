@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=MuseoModerno:ital,wght@0,400;0,700;1,400&display=swap');
+
+h1 {
+    color: #ff9500;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.727);
+
+}
+
+p {
+    font-size: 20px;
+    /* font-weight: 400; */
+    font-family: 'MuseoModerno', cursive;
+}
+
+p strong {
+    font-size: 1.5rem;
+}
+
+.bgimage {
+    width: 200px;
+    height: 300px;
+    color: white;
+    padding: 1rem;
+    background: url('https://placewaifu.com/image/200') green 25% center no-repeat;
+    background-size: cover;
+    border-radius: 1rem 2rem 3rem 4rem;
+    box-shadow: 0px 0px 20px rgba(226, 55, 183, 0.7); green, blue, alpha);
+}
+
+.overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+    width: 100px;
+    height: 100px;
+    background: #ffff0066;
+    position: relative;
+    top: -100px;
+    left: 50px;
+    
+}
+
+
+
