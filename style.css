@@ -1,9 +1,38 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=MuseoModerno:ital,wght@0,400;0,700;1,400&display=swap');
 
-h1 {
-    color: #ff9500;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.727);
+@keyframes slide {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
 
+}
+
+
+@keyframes red-to-yellow {
+    0% {
+        color: red;
+    }
+    50% {
+        color: blue;
+    }
+    100% {
+        color: yellow;
+    }
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    margin: 0.5rem 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.727);
+    animation: red-to-yellow 3s both infinite alternate; 
 }
 
 p {
@@ -17,30 +46,84 @@ p strong {
 }
 
 .bgimage {
-    width: 200px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    width: 300px;
     height: 300px;
     color: white;
-    padding: 1rem;
-    background: url('https://placewaifu.com/image/200') green 25% center no-repeat;
+    /* background: url('https://placewaifu.com/image/30') green 25% center no-repeat; */
     background-size: cover;
     border-radius: 1rem 2rem 3rem 4rem;
     box-shadow: 0px 0px 20px rgba(226, 55, 183, 0.7); green, blue, alpha);
+}
+.bgimage img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 300px;
+    z-index: -1;
+    opacity: 0.5;
+    object-fit: cover;
+}
+
+
+.bgimage:hover .overlay {
+    /* transform: translateY(0); */
+    animation: slide 1.5s both ;
+
+.bgimage:
+    
 }
 
 .overlay {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2rem;
+    font-size: 1rem;
     font-weight: bold;
     width: 100px;
-    height: 100px;
-    background: #ffff0066;
-    position: relative;
-    top: -100px;
-    left: 50px;
+    padding: 0.5rem 1rem;
+    background: #c0629666;
+    /* transform: translateY(100%); */
+    /* transition: transform 1.5s 0.5s; */
     
 }
 
+.overlay span {
+    opacity: 0;
+    transition: opacity 1s 2s;
+}
 
+.bgimage:hover .overlay span {
+    opacity: 1;
+}
 
+#boxes {
+    display: flex;
+    margin-top: 4rem;
+    border: 1px solid red;
+    width: 300px;
+    
+}
+
+#boxes div {
+    width: 100px;
+    display: inline-block;
+    height: 100px;
+    padding: 5px;
+    border: 5px solid black;
+}
+
+#boxes div:nth-of-type(1) {
+    background: green;
+}
+#boxes div:nth-of-type(2) {
+    background: teal;
+}
+#boxes div:nth-of-type(3) {
+    background: orange;
+}
